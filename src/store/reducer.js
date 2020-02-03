@@ -2,7 +2,9 @@ const initialState = {
     appTitle: "Strovollio",
     tableNumber: null,
     merchantID: null,
+    merchants: [],
     cart: [],
+    menu: []
 }
 
 export const reducer = (state=initialState, action) => {
