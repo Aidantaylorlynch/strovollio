@@ -1,7 +1,8 @@
 const initialState = {
     appTitle: "Strovollio",
     tableNumber: null,
-    merchantID: null
+    merchantID: null,
+    cart: [],
 }
 
 export const reducer = (state=initialState, action) => {
