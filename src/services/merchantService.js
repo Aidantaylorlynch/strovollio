@@ -17,6 +17,7 @@ export const getMerchants = () => {
 }
 
 export const getMenuItems = (merchantID) => {
+    console.log("getmenuitems", merchantID)
     return [
         {
             menuItemID: 1,

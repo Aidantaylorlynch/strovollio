@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from 'evergreen-ui';
 import { MenuItem } from './MenuItem';
 import '../styles/Menu.css';
@@ -6,11 +7,12 @@ import '../styles/Menu.css';
 export class Menu extends Component {
 
     componentDidMount() {
-        // this.props.getMenuItems(this.props.selectedMerchant.merchantID);
+        if (this.props.selectedMerchant !== null) {
+            this.props.getMenuItems(this.props.selectedMerchant.merchantID);
+        }
     }
 
 	render() {
-        console.log("menu props", this.props)
 		return (
 			<div className="menuContainer">
                 <div className="title five-pix-pad">
@@ -21,7 +23,7 @@ export class Menu extends Component {
                         Menu
                     </div>
                     <div className="menuBody">
-                        {this.props.menuItems !== undefined && this.props.menuItems.map((item) => {
+                        {this.props.menuItems.length < 0 && this.props.menuItems.map((item) => {
                             return (
                                 <MenuItem item={item}/>
                             )
@@ -29,8 +31,8 @@ export class Menu extends Component {
                     </div>
                 </div>
                 <div className="doubleButtonContainer">
-                    <Button is="a" href="/" appearance="minimal">Back</Button>
-                    <Button is="a" href="/Checkout" appearance="minimal">Checkout</Button>
+                    <Button appearance="minimal"><Link to="/" style={{textDecoration: 'none'}}>Back</Link></Button>
+                    <Button appearance="minimal"><Link to="/Checkout" style={{textDecoration: 'none'}}>Checkout</Link></Button>
                 </div>
 			</div>
 		)

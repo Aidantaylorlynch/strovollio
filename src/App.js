@@ -7,16 +7,16 @@ import './styles/App.css';
 export class App extends Component {
 	render() {
 		return (
-		<BrowserRouter>
-			<Switch>
-				<Route exact path="/">
-					<UserDetailContainer />
-				</Route>
-				<Route path="/Menu">
-					<MenuContainer />
-				</Route>
-			</Switch>
-		</BrowserRouter>
+			<BrowserRouter>
+				<Switch>
+					<Route exact path="/">
+						<UserDetailContainer />
+					</Route>
+					<Route path="/Menu">
+						<MenuContainer />
+					</Route>
+				</Switch>
+			</BrowserRouter>
 		)
 	}
 }

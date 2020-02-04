@@ -23,6 +23,7 @@ export const SET_MERCHANTS_ACTION_CREATOR = (merchants) => {
 }
 
 export const SET_SELECTED_MERCHANT_ACTION_CREATOR = (merchant) => {
+    console.log("action",merchant)
     return {
         type: SET_SELECTED_MERCHANT,
         payload: {
@@ -32,6 +33,7 @@ export const SET_SELECTED_MERCHANT_ACTION_CREATOR = (merchant) => {
 }
 
 export const SET_TABLE_NUMBER_ACTION_CREATOR = (tableNumber) => {
+    console.log("setting table number")
     return {
         type: SET_TABLE_NUMBER,
         payload: {

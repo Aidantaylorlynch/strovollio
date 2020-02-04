@@ -3,11 +3,13 @@ import { Menu } from './Menu';
 import { GET_MENU_ITEMS_ACTION_CREATOR } from '../store/actions';
 
 const mapStateToProps = (state) => {
-	return {
-		title: state.appTitle,
+    return {
+        title: state.appTitle,
+        merchants: state.merchants,
+        selectedMerchant: state.selectedMerchant,
 		tableNumber: state.tableNumber,
-        selectedMerchant: state.selectedMerchant
-	}
+		menuItems: state.menuItems
+    }
 }
 
 const mapDispatchToProps = (dispatch) => {
