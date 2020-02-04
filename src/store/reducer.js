@@ -1,4 +1,4 @@
-import { SET_MERCHANTS, SET_SELECTED_MERCHANT, SET_TABLE_NUMBER } from './actionsTypes';
+import { SET_MERCHANTS, SET_SELECTED_MERCHANT, SET_TABLE_NUMBER, SET_MENU_ITEMS } from './actionsTypes';
 
 const initialState = {
     appTitle: "Strovollio",
@@ -6,7 +6,7 @@ const initialState = {
     selectedMerchant: null,
     merchants: [],
     cart: [],
-    menu: []
+    menuItems: []
 }
 
 export const reducer = (state=initialState, action) => {
@@ -25,6 +25,11 @@ export const reducer = (state=initialState, action) => {
             return {
                 ...state,
                 tableNumber: action.payload.tableNumber
+            }
+        case SET_MENU_ITEMS:
+            return {
+                ...state,
+                menuItems: action.payload.menuItems
             }
         default:
             return state

@@ -5,7 +5,9 @@ import '../styles/UserDetail.css';
 export class UserDetail extends Component {
 
     componentDidMount() {
-        this.props.getMerchants();
+        if (this.props.selectedMerchant !== null) {
+            this.props.getMerchants();
+        }
     }
 
     render() {

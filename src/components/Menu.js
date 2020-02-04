@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
-import { Combobox, Button, TextInput } from 'evergreen-ui';
+import { Button } from 'evergreen-ui';
+import { MenuItem } from './MenuItem';
 import '../styles/Menu.css';
 
 export class Menu extends Component {
+
+    componentDidMount() {
+        // this.props.getMenuItems(this.props.selectedMerchant.merchantID);
+    }
+
 	render() {
+        console.log("menu props", this.props)
 		return (
 			<div className="menuContainer">
                 <div className="title five-pix-pad">
@@ -14,7 +21,11 @@ export class Menu extends Component {
                         Menu
                     </div>
                     <div className="menuBody">
-                        Menu Body
+                        {this.props.menuItems !== undefined && this.props.menuItems.map((item) => {
+                            return (
+                                <MenuItem item={item}/>
+                            )
+                        })}
                     </div>
                 </div>
                 <div className="doubleButtonContainer">

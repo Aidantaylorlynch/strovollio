@@ -2,7 +2,9 @@ import {
     GET_MERCHANTS,
     SET_MERCHANTS,
     SET_SELECTED_MERCHANT,
-    SET_TABLE_NUMBER
+    SET_TABLE_NUMBER,
+    GET_MENU_ITEMS,
+    SET_MENU_ITEMS
 } from './actionsTypes';
 
 export const GET_MERCHANTS_ACTION_CREATOR = () => {
@@ -31,9 +33,27 @@ export const SET_SELECTED_MERCHANT_ACTION_CREATOR = (merchant) => {
 
 export const SET_TABLE_NUMBER_ACTION_CREATOR = (tableNumber) => {
     return {
-        type: SET_SELECTED_MERCHANT,
+        type: SET_TABLE_NUMBER,
         payload: {
             tableNumber
+        }
+    }
+}
+
+export const SET_MENU_ITEMS_ACTION_CREATOR = (menuItems) => {
+    return {
+        type: SET_MENU_ITEMS,
+        payload: {
+            menuItems
+        }
+    }
+}
+
+export const GET_MENU_ITEMS_ACTION_CREATOR = (merchantID) => {
+    return {
+        type: GET_MENU_ITEMS,
+        payload: {
+            merchantID
         }
     }
 }

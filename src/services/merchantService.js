@@ -16,7 +16,7 @@ export const getMerchants = () => {
     ]
 }
 
-export const getMenuByMerchantID = (merchantID) => {
+export const getMenuItems = (merchantID) => {
     return [
         {
             menuItemID: 1,
