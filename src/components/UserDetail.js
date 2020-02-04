@@ -14,8 +14,6 @@ export class UserDetail extends Component {
             <div className="userDetailContainer">
                 <div className="title five-pix-pad">
                     {this.props.title}
-                    {this.props.selectedMerchant ? this.props.selectedMerchant.name : ''}
-                    {this.props.tableNumber}
                 </div>
                 <div className="comboboxContainer five-pix-pad">
                     <Combobox 

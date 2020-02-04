@@ -22,3 +22,9 @@
     height: 100%;
     width: 100%;
 }
+.five-pix-pad {
+    padding: 5px;
+}
+.menuItemDescription {
+    font-size: smaller;
+}

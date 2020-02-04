@@ -23,9 +23,9 @@ export class Menu extends Component {
                         Menu
                     </div>
                     <div className="menuBody">
-                        {this.props.menuItems.length < 0 && this.props.menuItems.map((item) => {
+                        {this.props.menuItems.length > 0 && this.props.menuItems.map((item, index) => {
                             return (
-                                <MenuItem item={item}/>
+                                <MenuItem key={index} item={item}/>
                             )
                         })}
                     </div>
