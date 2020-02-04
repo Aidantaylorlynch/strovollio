@@ -5,13 +5,19 @@
     align-items: center;
     height: 100vh;
     width: 100vw;
-  }
-  .five-pix-pad {
-    padding: 5px;
-  }
-  .comboboxContainer {
-    width: 35vw;
-  }
-  .textInputContainer {
-    width: 35vw;
-  }
+}
+.five-pix-pad {
+	padding: 5px;
+}
+.comboboxContainer {
+	width: 35vw;
+}
+.textInputContainer {
+	width: 35vw;
+}
+.title {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}

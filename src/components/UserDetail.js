@@ -31,7 +31,7 @@ export class UserDetail extends Component {
                     />
                 </div>
                 <div className="buttonContainer five-pix-pad">
-                    <Button is="a" href="/Order" appearance="minimal">Next</Button>
+                    <Button is="a" href="/Menu" appearance="minimal">Next</Button>
                 </div>
             </div>
         )
