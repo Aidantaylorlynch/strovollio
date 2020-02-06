@@ -4,7 +4,9 @@ import {
     SET_SELECTED_MERCHANT,
     SET_TABLE_NUMBER,
     GET_MENU_ITEMS,
-    SET_MENU_ITEMS
+    SET_MENU_ITEMS,
+    ADD_MENU_ITEM_TO_CART,
+    REMOVE_MENU_ITEM_FROM_CART
 } from './actionsTypes';
 
 export const GET_MERCHANTS_ACTION_CREATOR = () => {
@@ -32,7 +34,6 @@ export const SET_SELECTED_MERCHANT_ACTION_CREATOR = (merchant) => {
 }
 
 export const SET_TABLE_NUMBER_ACTION_CREATOR = (tableNumber) => {
-    console.log("setting table number")
     return {
         type: SET_TABLE_NUMBER,
         payload: {
@@ -55,6 +56,24 @@ export const GET_MENU_ITEMS_ACTION_CREATOR = (merchantID) => {
         type: GET_MENU_ITEMS,
         payload: {
             merchantID
+        }
+    }
+}
+
+export const ADD_MENU_ITEM_TO_CART_ACTION_CREATOR = (menuItem) => {
+    return {
+        type: ADD_MENU_ITEM_TO_CART,
+        payload: {
+            menuItem
+        }
+    }
+}
+
+export const REMOVE_MENU_ITEM_FROM_CART_ACTION_CREATOR = (menuItem) => {
+    return {
+        type: REMOVE_MENU_ITEM_FROM_CART,
+        payload: {
+            menuItem
         }
     }
 }

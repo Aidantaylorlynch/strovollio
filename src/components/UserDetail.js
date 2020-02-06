@@ -19,7 +19,7 @@ export class UserDetail extends Component {
                     <Combobox 
                     items={this.props.merchants}
                     itemToString={(merchant) => { return merchant ? merchant.name : '' }}
-                    onChange={(merchant) => { this.props.setSelectedMerchant(merchant); console.log(merchant) }}
+                    onChange={(merchant) => { this.props.setSelectedMerchant(merchant) }}
                     placeholder="Select Venue"
                     width="100%"
                     />

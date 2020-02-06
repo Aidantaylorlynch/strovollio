@@ -28,3 +28,27 @@
 .menuItemDescription {
     font-size: smaller;
 }
+.addRemoveButtonsContainer {
+    display: flex;
+    flex-direction: row;
+}
+.removeButton {
+    background-color: rgb(255, 226, 226);
+    width: 50px;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.addButton {
+    background-color: rgb(205, 255, 205);
+    width: 50px;
+    height: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

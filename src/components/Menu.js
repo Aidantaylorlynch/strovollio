@@ -16,16 +16,18 @@ export class Menu extends Component {
 		return (
 			<div className="menuContainer">
                 <div className="title five-pix-pad">
-                    {this.props.title}
+                    {this.props.title} - Total ${this.props.cart.length > 0 ? this.props.cart.reduce((totalPrice, menuItem) => {
+                        return totalPrice + menuItem.price
+                    }, 0) : ''}
                 </div>
                 <div className="menu">
                     <div className="menuHeader">
                         Menu
                     </div>
                     <div className="menuBody">
-                        {this.props.menuItems.length > 0 && this.props.menuItems.map((item, index) => {
+                        {this.props.menuItems.length > 0 && this.props.menuItems.map((menuItem, index) => {
                             return (
-                                <MenuItem key={index} item={item}/>
+                                <MenuItem key={index} cart={this.props.cart} menuItem={menuItem} addMenuItemToCart={this.props.addMenuItemToCart} removeMenuItemFromCart={this.props.removeMenuItemFromCart}/>
                             )
                         })}
                     </div>
