@@ -14,7 +14,6 @@ export class Checkout extends Component {
                     <Button appearance="minimal"><Link to="/Menu" style={{textDecoration: 'none'}}>Back</Link></Button>
                 </div>
             </div>
-            
         )
     }
 }
