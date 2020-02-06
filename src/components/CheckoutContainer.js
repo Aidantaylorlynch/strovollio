@@ -3,7 +3,9 @@ import { Checkout } from './Checkout'
 
 const mapStateToProps = (state) => {
     return {
-
+        selectedMerchant: state.selectedMerchant,
+        tableNumber: state.tableNumber,
+        cart: state.cart
     }
 }
 
@@ -15,5 +17,5 @@ const mapDispatchToProps = (dispatch) => {
 
 export const CheckoutContainer = connect(
     mapStateToProps,
-    mapStateToProps
+    mapDispatchToProps
 )(Checkout)
