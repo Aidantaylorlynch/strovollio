@@ -3,7 +3,6 @@ import '../styles/MenuItem.css';
 
 export class MenuItem extends Component {
     render() {
-        console.log(this.props)
         return (
             <div className="menuItemContainer">
                 <div className="menuItemHeader">

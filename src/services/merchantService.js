@@ -1,5 +1,4 @@
 export const getMerchants = () => {
-    console.log("running getMerchants")
     return [
         {
             name: "Bills Bar",
@@ -17,7 +16,6 @@ export const getMerchants = () => {
 }
 
 export const getMenuItems = (merchantID) => {
-    console.log("getmenuitems", merchantID)
     return [
         {
             menuItemID: 1,

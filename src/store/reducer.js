@@ -27,7 +27,6 @@ export const reducer = (state=initialState, action) => {
                 tableNumber: action.payload.tableNumber
             }
         case SET_MENU_ITEMS:
-            console.log(action)
             return {
                 ...state,
                 menuItems: action.payload.menuItems
