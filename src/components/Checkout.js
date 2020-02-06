@@ -18,6 +18,11 @@ export class Checkout extends Component {
                                 <CheckoutItem key={index} checkoutItem={checkoutItem}/>
                             )
                         })}
+                        <div className="checkoutTotal">
+                            Total ${this.props.cart.length > 0 ? this.props.cart.reduce((total, checkoutItem) => {
+                                return total + checkoutItem.price;
+                            }, 0): ''}
+                        </div>
                     </div>
                     <div className="doubleButtonContainer">
                         <Button appearance="minimal"><Link to="/Menu" style={{textDecoration: 'none'}}>Back</Link></Button>
