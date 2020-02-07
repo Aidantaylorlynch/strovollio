@@ -16,6 +16,7 @@ export class UserDetail extends Component {
                     {this.props.title}
                 </div>
                 <div className="comboboxContainer five-pix-pad">
+                    {/* the itemToString values need to be unique or evergreen with throw console errors*/}
                     <Combobox 
                     items={this.props.merchants}
                     itemToString={(merchant) => { return merchant ? merchant.name : '' }}

@@ -1,18 +1,13 @@
-export const getMerchants = () => {
-    return [
-        {
-            name: "Bills Bar",
-            merchantID: 1,
-        },
-        {
-            name: "Freds Eatery",
-            merchantID: 2,
-        },
-        {
-            name: "The Tuck Shop",
-            merchantID: 3,
-        },
-    ]
+import axios from 'axios'
+const BASE_URL = 'http://localhost:5000/api'
+
+export const getMerchants = async () => {
+    try {
+        const request = await axios.get(BASE_URL + '/merchants')
+        return request.data;
+    } catch (error) {
+        console.log("error fetching merchants", error)
+    }
 }
 
 export const getMenuItems = (merchantID) => {
