@@ -6,7 +6,8 @@ import {
     GET_MENU_ITEMS,
     SET_MENU_ITEMS,
     ADD_MENU_ITEM_TO_CART,
-    REMOVE_MENU_ITEM_FROM_CART
+    REMOVE_MENU_ITEM_FROM_CART,
+    CREATE_ORDER
 } from './actionsTypes';
 
 export const GET_MERCHANTS_ACTION_CREATOR = () => {
@@ -74,6 +75,17 @@ export const REMOVE_MENU_ITEM_FROM_CART_ACTION_CREATOR = (menuItem) => {
         type: REMOVE_MENU_ITEM_FROM_CART,
         payload: {
             menuItem
+        }
+    }
+}
+
+export const CREATE_ORDER_ACTION_CREATOR = (merchantID, userID, menuItems) => {
+    return {
+        type: CREATE_ORDER,
+        payload: {
+            merchantID,
+            userID,
+            menuItems
         }
     }
 }
