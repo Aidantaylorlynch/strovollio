@@ -79,13 +79,13 @@ export const REMOVE_MENU_ITEM_FROM_CART_ACTION_CREATOR = (menuItem) => {
     }
 }
 
-export const CREATE_ORDER_ACTION_CREATOR = (merchantID, userID, menuItems) => {
+export const CREATE_ORDER_ACTION_CREATOR = (merchantID, userID, menuItemIDs) => {
     return {
         type: CREATE_ORDER,
         payload: {
             merchantID,
             userID,
-            menuItems
+            menuItemIDs
         }
     }
 }

@@ -12,7 +12,7 @@ export const getMerchants = async () => {
 
 export const getMenuItems = async (merchantID) => {
     try {
-        const request = await axios.get(BASE_URL + '/merchants/' + merchantID + '/menu')
+        const request = await axios.get(BASE_URL + '/merchants/' + merchantID + '/menuitems')
         return request.data.menuItems;
     } catch (error) {
         console.log("error fetching menu", error)

@@ -16,6 +16,7 @@ function* fetchMerchants() {
 function* fetchMenuItems(action) {
     try {
         const menuItems = yield call(getMenuItems, action.payload.merchantID)
+        console.log(menuItems)
         yield put(SET_MENU_ITEMS_ACTION_CREATOR(menuItems))
     } catch (error) {
         console.log("error fetchMenuItems", error)
