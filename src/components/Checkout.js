@@ -28,7 +28,9 @@ export class Checkout extends Component {
                         <Button appearance="minimal"><Link to="/Menu" style={{textDecoration: 'none'}}>Back</Link></Button>
                         <Button appearance="minimal" onClick={() => {
                             console.log(this.props.cart);
-                            this.props.createOrder(this.props.selectedMerchant.merchantID, "", this.props.cart)
+                            this.props.createOrder(this.props.selectedMerchant.merchantID, "", this.props.cart.map((cartItem) => {
+                                return cartItem.menuItemID;
+                            }))
                         }}><Link to="/" style={{textDecoration: 'none'}}>Confirm Order</Link></Button>
                     </div>
                 </div>
