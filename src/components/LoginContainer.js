@@ -4,6 +4,7 @@ import { LOGIN_ACTION_CREATOR } from '../store/actions';
 
 const mapStateToProps = (state) => {
     return {
+        title: state.appTitle,
         loggedIn: state.loggedIn
     }
 }
