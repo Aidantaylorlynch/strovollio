@@ -17,10 +17,10 @@ export class Login extends Component {
                         {this.props.title}
                     </div>
                     <div className="five-pix-pad">
-                        <TextInput placeholder="username"/>
+                        <TextInput placeholder="Username"/>
                     </div>
                     <div className="five-pix-pad">
-                        <TextInput placeholder="password"/>
+                        <TextInput placeholder="Password" type="password"/>
                     </div>
                     <div className="five-pix-pad">
                         <Button appearance="minimal" onClick={() => {
