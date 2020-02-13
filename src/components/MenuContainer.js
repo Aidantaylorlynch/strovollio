@@ -4,6 +4,7 @@ import { GET_MENU_ITEMS_ACTION_CREATOR, ADD_MENU_ITEM_TO_CART_ACTION_CREATOR, RE
 
 const mapStateToProps = (state) => {
     return {
+		loggedIn: state.loggedIn,
         title: state.appTitle,
         merchants: state.merchants,
         selectedMerchant: state.selectedMerchant,

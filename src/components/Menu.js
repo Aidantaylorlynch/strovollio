@@ -12,7 +12,11 @@ export class Menu extends Component {
     }
 
 	render() {
-        if (this.props.selectedMerchant && this.props.tableNumber) {
+        if (!this.props.loggedIn) {
+            return (
+                <Redirect to="/login"/>
+            )
+        } else if (this.props.selectedMerchant && this.props.tableNumber) {
             return (
                 <div className="menuContainer">
                     <div className="title five-pix-pad">

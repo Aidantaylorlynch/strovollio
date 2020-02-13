@@ -6,7 +6,11 @@ import '../styles/Checkout.css'
 
 export class Checkout extends Component {
     render() {
-        if (this.props.selectedMerchant && this.props.tableNumber) {
+        if (!this.props.loggedIn) {
+            return (
+                <Redirect to="/login"/>
+            )
+        } else if (this.props.selectedMerchant && this.props.tableNumber) {
             return (
                 <div className="checkoutContainer">
                     <div className="checkoutHeader">

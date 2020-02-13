@@ -4,6 +4,7 @@ import { CREATE_ORDER_ACTION_CREATOR } from '../store/actions';
 
 const mapStateToProps = (state) => {
     return {
+        loggedIn: state.loggedIn,
         selectedMerchant: state.selectedMerchant,
         tableNumber: state.tableNumber,
         cart: state.cart

@@ -1,8 +1,9 @@
 import { call, put, takeLatest, all } from 'redux-saga/effects';
 import { getMerchants, getMenuItems } from '../services/merchantService';
 import { createOrder } from '../services/orderService';
-import { SET_MERCHANTS_ACTION_CREATOR, SET_MENU_ITEMS_ACTION_CREATOR } from '../store/actions';
-import { GET_MERCHANTS, GET_MENU_ITEMS, CREATE_ORDER } from '../store/actionsTypes';
+import { SET_MERCHANTS_ACTION_CREATOR, SET_MENU_ITEMS_ACTION_CREATOR, SET_LOGGED_IN_USER_ACTION_CREATOR } from '../store/actions';
+import { GET_MERCHANTS, GET_MENU_ITEMS, CREATE_ORDER, LOGIN } from '../store/actionsTypes';
+import { login } from '../services/loginService';
 
 function* fetchMerchants() {
     try {
@@ -35,8 +36,18 @@ function* postOrder(action) {
     }
 }
 
+function* loginUser() {
+    try {
+        const user = yield call(login)
+        yield put(SET_LOGGED_IN_USER_ACTION_CREATOR(user))
+    } catch (error) {
+        console.log("error loginUser", error)
+    }
+}
+
 export const saga = function*() {
     yield all([
+        takeLatest(LOGIN, loginUser),
         takeLatest(CREATE_ORDER, postOrder),
         takeLatest(GET_MERCHANTS, fetchMerchants),
         takeLatest(GET_MENU_ITEMS, fetchMenuItems)

@@ -1,6 +1,8 @@
-import { SET_MERCHANTS, SET_SELECTED_MERCHANT, SET_TABLE_NUMBER, SET_MENU_ITEMS, ADD_MENU_ITEM_TO_CART, REMOVE_MENU_ITEM_FROM_CART } from './actionsTypes';
+import { SET_MERCHANTS, SET_SELECTED_MERCHANT, SET_TABLE_NUMBER, SET_MENU_ITEMS, ADD_MENU_ITEM_TO_CART, REMOVE_MENU_ITEM_FROM_CART, SET_LOGGED_IN_USER } from './actionsTypes';
 
 const initialState = {
+    loggedIn: false,
+    userID: null,
     appTitle: "Strovollio",
     tableNumber: null,
     selectedMerchant: null,
@@ -50,6 +52,12 @@ export const reducer = (state=initialState, action) => {
                         return menuItem.menuItemID !== action.payload.menuItem.menuItemID;
                     }
                 })
+            }
+        case SET_LOGGED_IN_USER:
+            return {
+                ...state,
+                userID: action.payload.user.userID,
+                loggedIn: true
             }
         default:
             return state

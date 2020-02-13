@@ -4,6 +4,7 @@ import { GET_MERCHANTS_ACTION_CREATOR, SET_SELECTED_MERCHANT_ACTION_CREATOR, SET
 
 const mapStateToProps = (state) => {
     return {
+        loggedIn: state.loggedIn,
         title: state.appTitle,
         merchants: state.merchants,
         selectedMerchant: state.selectedMerchant,

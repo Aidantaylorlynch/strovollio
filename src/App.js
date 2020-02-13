@@ -3,6 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { UserDetailContainer } from './components/UserDetailContainer';
 import { MenuContainer } from './components/MenuContainer';
 import { CheckoutContainer } from './components/CheckoutContainer';
+import { LoginContainer } from './components/LoginContainer';
 import './styles/App.css';
 
 export class App extends Component {
@@ -18,6 +19,9 @@ export class App extends Component {
 					</Route>
 					<Route path="/Checkout">
 						<CheckoutContainer />
+					</Route>
+					<Route path="/Login">
+						<LoginContainer />
 					</Route>
 				</Switch>
 			</BrowserRouter>

@@ -7,7 +7,9 @@ import {
     SET_MENU_ITEMS,
     ADD_MENU_ITEM_TO_CART,
     REMOVE_MENU_ITEM_FROM_CART,
-    CREATE_ORDER
+    CREATE_ORDER,
+    LOGIN,
+    SET_LOGGED_IN_USER
 } from './actionsTypes';
 
 export const GET_MERCHANTS_ACTION_CREATOR = () => {
@@ -86,6 +88,21 @@ export const CREATE_ORDER_ACTION_CREATOR = (merchantID, userID, menuItemIDs) => 
             merchantID,
             userID,
             menuItemIDs
+        }
+    }
+}
+
+export const LOGIN_ACTION_CREATOR = () => {
+    return {
+        type: LOGIN
+    }
+}
+
+export const SET_LOGGED_IN_USER_ACTION_CREATOR = (user) => {
+    return {
+        type: SET_LOGGED_IN_USER,
+        payload: {
+            user
         }
     }
 }
