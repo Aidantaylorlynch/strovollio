@@ -14,7 +14,7 @@ export class Login extends Component {
             return (
                 <div className="loginContainer">
                     <div className="five-pix-pad">
-                        {this.props.title}
+                        {this.props.title} test
                     </div>
                     <div className="five-pix-pad">
                         <TextInput placeholder="Username"/>
