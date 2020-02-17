@@ -31,7 +31,7 @@ steps:
   - task: DownloadBuildArtifacts@0
     inputs:
       ArtifactName: 'build'
-      downloadPath: '$(System.ArtifactsDirectory)'
+      downloadPath: '$(System.ArtifactsDirectory)/build'
   - task: AzureFileCopy@3
     displayName: Copy files to Azure blob storage (for test)
     inputs:
