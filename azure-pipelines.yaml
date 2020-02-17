@@ -26,8 +26,8 @@ steps:
   - task: AzureFileCopy@3
     displayName: Copy files to Azure blob storage (for test)
     inputs:
-      azureSubscription: ProBuildAndReleaseToStorage
-      storage: protesting
+      azureSubscription: strovollio
+      storage: strovollio
       SourcePath: '$(System.ArtifactsDirectory)/build'
       Destination: AzureBlob
       ContainerName: $web
