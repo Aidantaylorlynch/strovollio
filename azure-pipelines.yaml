@@ -1,0 +1,34 @@
+steps:
+  - task: Npm@1
+    displayName: 'npm install'
+    inputs:
+      verbose: false
+  - task: Npm@1
+    displayName: 'npm build'
+    inputs:
+      command: custom
+      verbose: false
+      customCommand: 'run build'
+  - task: CopyFiles@2
+    displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+    inputs:
+      SourceFolder: build
+      TargetFolder: '$(build.artifactstagingdirectory)'
+  - task: PublishPipelineArtifact@1
+    displayName: 'Publish Pipeline Artifact'
+    inputs:
+      targetPath: '$(build.artifactstagingdirectory)'
+      artifact: build
+  - task: DownloadBuildArtifacts@0
+    inputs:
+      ArtifactName: 'build'
+      downloadPath: '$(System.ArtifactsDirectory)'
+  - task: AzureFileCopy@3
+    displayName: Copy files to Azure blob storage (for test)
+    inputs:
+      azureSubscription: ProBuildAndReleaseToStorage
+      storage: protesting
+      SourcePath: '$(System.ArtifactsDirectory)/build'
+      Destination: AzureBlob
+      ContainerName: $web
+      CleanTargetBeforeCopy: true
