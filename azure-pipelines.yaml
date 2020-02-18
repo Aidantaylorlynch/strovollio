@@ -45,3 +45,4 @@ steps:
       SourcePath: '$(System.ArtifactsDirectory)/build'
       Destination: AzureBlob
       ContainerName: $web
+      CleanTargetBeforeCopy: true
