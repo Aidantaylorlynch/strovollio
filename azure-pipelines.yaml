@@ -42,7 +42,7 @@ steps:
     inputs:
       azureSubscription: strovollio
       scriptLocation: inlineScript
-      inlineScript: 'az storage blob delete --container-name strovollio --name $web'
+      inlineScript: 'az storage blob delete --container-name strovollio --name $web --connection-string DefaultEndpointsProtocol=https;AccountName=strovollio;AccountKey=AFuRuYNlQTpY/MvbOZ0cy3VnEXkr0B4r7xdg8a+RG18CvgmQLI2ki2YvWgiAZZANKnPTB7qax9/GjpmzNYIQ+Q==;EndpointSuffix=core.windows.net'
         
 
   - task: AzureFileCopy@3
