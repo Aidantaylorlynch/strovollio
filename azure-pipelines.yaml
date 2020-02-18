@@ -37,6 +37,14 @@ steps:
       ArtifactName: 'build'
       downloadPath: '$(System.ArtifactsDirectory)'
 
+  - task: AzureCLI@1
+    displayName: 'Azure CLI '
+    inputs:
+      azureSubscription: strovollio
+      scriptLocation: inlineScript
+      inlineScript: 'az storage blob delete --container-name strovollio --name $web'
+        
+
   - task: AzureFileCopy@3
     displayName: Copy files to Azure blob storage (for test)
     inputs:
