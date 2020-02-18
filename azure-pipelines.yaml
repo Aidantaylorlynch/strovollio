@@ -21,16 +21,16 @@ steps:
       customCommand: 'run build'
 
   - task: CopyFiles@2
-    displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
     inputs:
-      SourceFolder: build
-      TargetFolder: '$(build.artifactstagingdirectory)'
+      SourceFolder: './build'
+      Contents: '**'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-  - task: PublishPipelineArtifact@1
-    displayName: 'Publish Pipeline Artifact'
+  - task: PublishBuildArtifacts@1
     inputs:
-      targetPath: '$(build.artifactstagingdirectory)'
-      artifact: build
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'build'
+      publishLocation: 'Container'
 
   - task: DownloadBuildArtifacts@0
     inputs:
@@ -45,4 +45,3 @@ steps:
       SourcePath: '$(System.ArtifactsDirectory)/build'
       Destination: AzureBlob
       ContainerName: $web
-      CleanTargetBeforeCopy: true
